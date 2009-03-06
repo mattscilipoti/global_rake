@@ -1,4 +1,9 @@
-require 'rio' rescue 'Missing gem: gem install rio.'
+begin
+  require 'rio'
+rescue LoadError
+  raise 'Missing gem: gem install rio.'
+end
+
 namespace :file do
   namespace :ls do
     desc "List files, where size is 0"
